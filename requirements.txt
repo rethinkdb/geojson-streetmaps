@@ -1,6 +1,6 @@
 backports.ssl-match-hostname==3.4.0.2
 certifi==14.05.14
-rethinkdb==1.15.0-0
+rethinkdb>=1.15,<1.16
 tornado==4.0.1
-wsgiref==0.1.2
 more-itertools==2.2
+reql-cli==0.3.1

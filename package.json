@@ -1,0 +1,21 @@
+{
+  "name": "geodemo",
+  "version": "1.0.0",
+  "description": "Geo query demo for RethinkDB",
+  "dependencies": {
+    "browserify": "^5.11.2",
+    "coffee-script": "^1.8.0",
+    "coffeeify": "^0.7.0",
+    "jquery": "^2.1.1",
+    "leaflet": "^0.7.3"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "make": "make"
+  },
+  "author": "",
+  "license": "MIT"
+}
