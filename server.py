@@ -1,4 +1,5 @@
 import argparse
+import os
 import json
 from datetime import datetime
 from itertools import islice
@@ -64,6 +65,8 @@ class OSMHandler(RethinkDBHandler):
 
 def main(port, host, rport, db):
     settings = {'host': host, 'port': rport, 'db': db}
+    print 'Server running on http://localhost:{}'.format(port)
+    print 'Connected to RethinkDB on {}:{}'.format(host, rport)
     routes = [
         (r'/osm/(.*?)/(.*?)/(.*?)/(.*?)/?', OSMHandler),
         (r'/poi/(.*?)/(.*?)/?', PointOfInterestHandler),
@@ -76,15 +79,17 @@ def main(port, host, rport, db):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('port', type=int, default=8090,
+    parser.add_argument('--port', type=int, default=8090,
                         help='Port server should run on')
-    parser.add_argument('--rhost', default='localhost',
+    parser.add_argument('--rdbhost', default=os.getenv('RDBHOST', 'localhost'),
                         help='RethinkDB hostname to connect to')
-    parser.add_argument('--rport', type=int, default=28015,
+    parser.add_argument('--rdbport', type=int,
+                        default=int(os.getenv('RDBPORT', 28015)),
                         help='RethinkDB port to connect to')
-    parser.add_argument('--db', '-d', default='geojson_streetmaps',
+    parser.add_argument('--db', '-d',
+                        default=os.getenv('DB', 'geojson_streetmaps'),
                         help='Database to use (default: geojson_streetmaps)')
     args = parser.parse_args()
-    main(args.port, args.rhost, args.rport, args.db)
+    main(args.port, args.rdbhost, args.rdbport, args.db)
 
 
