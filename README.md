@@ -48,7 +48,7 @@ To run the server do:
 $ python server.py
 ```
 
-The server process will use the same enviroment variables as the Makefile, but it also accepts commandline flags:
+The server process will use the same environment variables as the Makefile, but it also accepts commandline flags:
 
 ```
 $ python server.py --help
