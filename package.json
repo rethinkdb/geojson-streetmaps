@@ -17,5 +17,6 @@
     "make": "make"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/rethinkdb/geojson-streetmaps"
 }

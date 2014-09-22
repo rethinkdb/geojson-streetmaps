@@ -1,5 +1,6 @@
 L = require 'leaflet'
 $ = require 'jquery'
+mapboxapikey = require './mapboxapikey.js'
 
 # Leaflet needs to know where its icons are
 L.Icon.Default.imagePath = 'node_modules/leaflet/dist/images/'
@@ -15,7 +16,7 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png',
         <a href="http://openstreetmap.org">OpenStreetMap</a>,
         background imagery &copy;
         <a href="http://mapbox.com">Mapbox</a>'
-    id: "danielmewes.j3ff1cj8"
+    id: mapboxapikey.key
 ).addTo(map);
 
 #  Overlays
@@ -51,6 +52,8 @@ updateStreets = (e) ->
 map.on "load", updateStreets
 map.on "moveend", updateStreets
 map.on "zoomend", updateStreets
+
+updateStreets()
 
 # Gets POIs
 onEachFeature = (feature, layer) ->
