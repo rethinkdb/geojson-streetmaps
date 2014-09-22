@@ -45,10 +45,10 @@ class OSMHandler(RethinkDBHandler):
         north, south, east, west = map(float, args)
         start_t = datetime.now()
         query_range = r.polygon(
-            r.point(north, west),
-            r.point(south, west),
-            r.point(south, east),
-            r.point(north, east))
+            r.point(west, north),
+            r.point(west, south),
+            r.point(east, south),
+            r.point(east, north))
         selection = (r.table('streets')
                      .get_intersecting(query_range, index='geometry'))
         initial_t = (datetime.now() - start_t).total_seconds()

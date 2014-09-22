@@ -80,7 +80,7 @@ updatePOIs = (e) ->
     updatePOIsId++;
     ((_updateId) ->
         # Load new data
-        $.getJSON("/poi/#{e.latlng.lat}/#{e.latlng.lng}", (json) ->
+        $.getJSON("/poi/#{e.latlng.lng}/#{e.latlng.lat}", (json) ->
             if updatePOIsId == _updateId
                 myStyle = color: "#40f040", opacity: 0.5
                 newPoisLayer = L.geoJson json,
