@@ -74,7 +74,7 @@ The backend is built with the [tornado][] web server, and makes use of the  [mor
 
 [OpenStreetMap]: http://www.openstreetmap.org/#map=5/51.500/-0.100
 [Mapbox]: https://www.mapbox.com
-[leaflet]: leafletjs.com
+[leaflet]: http://leafletjs.com
 [jQuery]: http://jquery.com
-[tornado]: www.tornadoweb.org
+[tornado]: http://www.tornadoweb.org
 [more-itertools]: https://github.com/erikrose/more-itertools
